@@ -1,7 +1,7 @@
 import React from 'react'
 import { GifItem } from '../styled-components'
 
-const Gif = ({giphy}) => {
+const Stickers = ({giphy}) => {
     return(
         <GifItem>
             <img src={giphy.images.fixed_height.url} />
@@ -9,4 +9,4 @@ const Gif = ({giphy}) => {
     )
 }
 
-export default Gif
+export default Stickers
