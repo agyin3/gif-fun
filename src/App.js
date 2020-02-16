@@ -13,9 +13,8 @@ function App() {
   const [stickers, setStickers] = useState()
 
   useEffect(() => {
-      axios.get(`https://api.giphy.com/v1/gifs/search?api_key=C9FXZ8FuWmwXzHDo9CNQ8bueSEhjfXV8&q=${query}&weirdness=3`)
+      axios.get(`https://api.giphy.com/v1/gifs/search?api_key=C9FXZ8FuWmwXzHDo9CNQ8bueSEhjfXV8&q=${query.toLowerCase()}&weirdness=3`)
         .then(res => {
-          console.log(res)
           setGifs(res.data.data)
         })
         .catch(err => {
@@ -26,7 +25,6 @@ function App() {
   useEffect(() => {
     axios.get(`https://api.giphy.com/v1/stickers/search?api_key=C9FXZ8FuWmwXzHDo9CNQ8bueSEhjfXV8&q=${query}&weirdness=3`)
       .then(res => {
-        console.log(res)
         setStickers(res.data.data)
       })
       .catch(err => {
